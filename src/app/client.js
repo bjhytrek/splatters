@@ -1,6 +1,6 @@
 import 'react-toolbox/lib/commons.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App.js';
+import Layout from './Layout.js';
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<Layout />, document.getElementById('app'));

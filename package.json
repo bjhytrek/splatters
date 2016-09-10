@@ -75,5 +75,8 @@
     "start": "node server"
   },
   "license": "MIT",
-  "homepage": "https://github.com/react-toolbox/react-toolbox-example#readme"
+  "homepage": "https://github.com/react-toolbox/react-toolbox-example#readme",
+  "dependencies": {
+    "react-bootstrap": "^0.30.3"
+  }
 }

@@ -1,12 +1,14 @@
 import React, { PropTypes } from 'react';
-import { AppBar, Checkbox, IconButton } from 'react-toolbox';
+import { AppBar, IconButton } from 'react-toolbox';
 import { Layout, NavDrawer, Panel, Sidebar } from 'react-toolbox';
+import theme from './Layout.scss';
+import alertInstance from './alert.js';
+import Link from 'react-toolbox/lib/link';
 
-class LayoutTest extends React.Component {
+class LayoutInstance extends React.Component {
     state = {
         drawerActive: false,
-        drawerPinned: false,
-        sidebarPinned: false
+        drawerPinned: false
     };
 
     toggleDrawerActive = () => {
@@ -15,10 +17,6 @@ class LayoutTest extends React.Component {
 
     toggleDrawerPinned = () => {
         this.setState({ drawerPinned: !this.state.drawerPinned });
-    }
-
-    toggleSidebar = () => {
-        this.setState({ sidebarPinned: !this.state.sidebarPinned });
     };
 
     render() {
@@ -32,12 +30,16 @@ class LayoutTest extends React.Component {
                     </p>
                 </NavDrawer>
                 <Panel>
-                    <AppBar><IconButton icon='menu' inverse={ true } onClick={ this.toggleDrawerActive }/></AppBar>
+                    <AppBar><IconButton  icon='menu' inverse={ true } onClick={ this.toggleDrawerActive }/>
+                      <h2 title={ true }>Title</h2>
+                      <a href="/home">Home</a>
+                      <a href="/home">About</a>
+                      <a rightIcon={ true } href="/home">Find Us</a>
+                    </AppBar>
                     <div style={{ flex: 1, overflowY: 'auto', padding: '1.8rem' }}>
                         <h1>Main Content</h1>
                         <p>Main content goes here.</p>
-                        <Checkbox label='Pin drawer' checked={this.state.drawerPinned} onChange={this.toggleDrawerPinned} />
-                        <Checkbox label='Show sidebar' checked={this.state.sidebarPinned} onChange={this.toggleSidebar} />
+
                     </div>
                 </Panel>
             </Layout>
@@ -45,4 +47,4 @@ class LayoutTest extends React.Component {
     }
 }
 
-export default LayoutTest;
+export default LayoutInstance;
